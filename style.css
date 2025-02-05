@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: #000;
+    position: relative;
+}
+
+.text {
+    color: #fff;
+    font-size: 110px;
+    text-align: center;
+    margin-top: 18%;
+}
+
+div {
+    position: absolute;
+    pointer-events: none;
+    filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.5));
+    animation: fadeInOut 2s linear infinite;
+}
+
+div::before { /* Fixed the pseudo-element selector */
+    content: ""; /* Fixed the typo */
+    position: absolute; /* Fixed the typo */
+    width: 100%;
+    height: 100%;
+    background: url(/roses.jfif);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    animation: move 2s linear infinite; /* Ensure this matches an actual keyframe */
+}
+
+@keyframes fadeInOut { /* Added a name for the keyframes */
+    0% {
+        transform: translate(0) rotate(0deg);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0; /* Fades out */
+    }
+}
+
+@keyframes move { /* Added a placeholder for the move animation */
+    0% {
+        transform: translate(0);
+    }
+    100% {
+        transform: translate(10px); /* Example translation */
+    }
+}
